@@ -6,7 +6,7 @@ Leo Lau
 ## Background
 
 * Life is too short for email communications
-* Simply too tiring to read work emails and interrupting junk mails
+* Simply too tiring to read work emails, bills/statements and interrupting junk mails
 * The more you sign up for freebies online, the more junk mails you end up with
 
 ## ARE MARKETING EMAILS EVIL?
