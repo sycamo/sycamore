@@ -1,0 +1,969 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@color-blue: #1d9ee9;
+@color-grey: #909090;
+@base-font-size: 16px;
+@default-font-color: #fff;
+@shadow-under: 0 0 30px 8px rgba(0,0,0,0.6);
+@shadow-right: 30px 0 60px 12px rgba(0,0,0,0.9);
+@shadow-menu:0 0 30px 4px rgba(29,158,217,0.3);
+@placeholder-url: "http://placehold.it";
+@lorempix: "http://lorempixel.com";
+@header-height: 56px;
+@m-header-height: 48px;
+@s-logo-margin: 4px;
+@s-logo-margin-left: 3%;
+@thumbnail-min-height: 240px;
+@thumbnail-col: 300px;
+
+
+body {
+    background: url('../images/brushed_gray.jpg') ;
+    color: @default-font-color;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: @base-font-size + 2;
+    text-decoration: none;
+    font-family: "Helvetica Neue","Helvetica","Arial","sans-serif";
+    
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+a:hover, a:active {
+    text-decoration: none;
+}
+
+
+
+header {
+    position: fixed;
+    height: @m-header-height;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+
+}
+
+header:after {
+    display: block;
+    z-index: 999;
+    height: 0px;
+    content: '';
+    box-shadow: @shadow-under;
+
+} 
+
+#header-nav-strip {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-transform: uppercase;
+    text-align: right;
+    background: url('../images/brushed_black.jpg');
+    font-size: 1em;
+    line-height: @m-header-height;  
+
+
+    .sycamo-logo {
+
+        position: absolute;
+        display: block;
+        top: 0px;
+        left: 0px;
+        width: 138px;
+        height: 40px;
+        background: url('@{placeholder-url}/138x40') no-repeat;
+        color: transparent;
+
+        margin-left: @s-logo-margin-left;
+        margin-top: @s-logo-margin;
+
+
+    }
+
+    li {
+        line-height: @m-header-height;
+    }
+}
+
+
+#header-nav {
+    position: relative;
+    display: inline-block;
+
+
+    height: 100%;
+    width: auto;
+    padding-right: 1%;
+
+    ul {
+        height: 100%;
+        white-space: nowrap;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        line-height: @m-header-height;
+
+        li {
+            float: left;
+            text-align: center;
+            font-size: 0.8em;
+            padding-left: 1em;
+            padding-right: 1em; 
+
+            // vertical-align: top;
+            border-left: 1px solid rgba(255,255,255,0.2);
+
+            a {
+                color: #fff;
+            }
+
+
+        }
+        li:hover, li.mobile-menu:hover, li:active, li.mobile-menu:active {
+            background-color: #000;
+            box-shadow: @shadow-menu;
+        
+            a {
+                color: @color-blue;
+            }
+
+            hr {
+                color: @color-blue;
+            }
+
+        }
+
+
+        li.idea {
+            // display: none; //mobile first
+        }
+
+        li.sign-up {
+            // display: none; //mobile first
+        }
+
+
+
+        li.mobile-menu {
+
+            
+            width: 2em;
+
+            div {
+                height: @m-header-height;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+
+            hr {
+                width: 1.8em;
+                height: 2px;
+                color: #fff;
+                margin: 4px auto;
+            }
+        }
+
+    }
+}
+
+article {  
+    width: 100%;
+    margin: 0 auto;
+}
+
+#contentgrid {
+    width: 100%;
+    margin-top: @m-header-height;
+    margin-bottom: @m-header-height*3;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul li {
+        margin-bottom: 0px;
+        margin-right: 0px;
+    }
+
+
+
+    li.poster {
+        width: 100%; //mobile first
+        
+    }
+
+    li.poster:after {
+        position: relative;
+        display: block;
+        z-index: 999;
+        height: 0px;
+        content: '';
+        box-shadow: @shadow-under;
+
+    } 
+
+
+    li.poster figure {
+
+        background: url('@{lorempix}/1280/720') no-repeat;
+        background-size: cover;
+
+        position: relative;
+
+        div.poster-img {
+            position: relative;
+            display: block;
+            float: right;
+            width: 100%;
+    
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            img:after {
+                position: absolute;
+                display: block;
+                bottom: 20px;  
+                left: 50%;
+                z-index: 999;
+                content:'';
+                border-style: solid;
+                border-width: 0 20px 20px 20px;
+                border-color: transparent transparent #000 transparent;
+                margin-left: -10px;
+
+            }
+
+
+
+        }
+
+        figcaption {
+            // position: relative;
+            display: block;
+            width: 100%;
+            height: auto;
+            background: black;
+
+            hgroup {
+                display: block;
+                bottom: 0;
+                left: auto;
+                right: auto;
+                padding: 60% 1.5em 1em 1.5em;
+            }
+
+            h1 {
+                font-size: 1.2em;
+                margin-bottom: 1em;
+                text-transform: uppercase;
+            }
+
+            h2, h3, h4, h5, h6 {
+                color: @color-grey;
+                font-size: 1em;
+                font-weight: normal;
+                line-height: 1.2em;
+                margin-bottom: 1.2em;
+            }
+
+            hr  {
+                width: 2em;
+                margin-top: 1.5em;
+            }
+
+
+        }
+
+        // figcaption:after {
+        //     position: absolute;
+        //     display: block;
+        //     bottom: 270px;  
+        //     left: 50%;
+        //     content:'';
+        //     border-style: solid;
+        //     border-width: 0 20px 20px 20px;
+        //     border-color: transparent transparent #000 transparent;
+        //     margin-left: -10px;
+
+        // }
+
+    } // end of li.poster class
+
+    li.resp-thumbnail {
+        width: 100%; // mobile first
+    }
+
+    li.resp-thumbnail:after {
+        position: relative;
+        display: block;
+        z-index: 999;
+        height: 0px;
+        content: '';
+    } 
+
+    li.resp-thumbnail:hover {
+
+        figure {
+            width: 100%;
+        }
+
+        figcaption {
+            width: 100%;
+            max-height: @thumbnail-min-height*0.6;
+            overflow: hidden;
+        
+            h3 {
+                z-index: -1;
+                display: none;
+            }
+
+            hgroup {
+                display: block;
+                width: 100%
+                bottom: 0;
+                padding: 0 2em;
+
+            }
+
+            h4 {
+                font-size: 0.8em;
+                color: #fff;
+                text-transform: uppercase;
+                margin-bottom: 1.8em;
+            }
+
+            h5, h6 {
+                color: @color-grey;
+                font-size: 1.2em;
+                font-weight: normal;
+                line-height: 1.2em;
+                margin-bottom: 1em;
+            }
+
+
+
+            hr  {
+                width: 2em;
+                margin-top: 1.5em;
+            }
+
+        }
+    }
+
+    li.resp-thumbnail figure {
+
+        background: transparent;
+
+        div.thumbnail-container {
+            position: relative;
+            display: block;
+            float: right;
+            width: 100%;
+    
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        figcaption {
+            position: absolute;
+            display: block;
+            bottom: 0px;
+            left: 0px;
+            width: auto;
+            height: auto;
+            background: black;
+
+            h3 {
+                position: relative;
+                display: block;
+                bottom: 0px;
+                left: 0px;
+                background: black;
+                font-size: @base-font-size *0.6;
+                line-height: @base-font-size;
+                color: #fff;
+                text-transform: uppercase;
+                padding: 0 10px;
+            }
+
+            hgroup {
+                display: none;
+            }
+            
+
+
+        }
+
+    } // end of li.resp-thumbnail class
+
+}
+
+
+
+footer {
+    background: black;
+    width: 100%;
+}
+
+div.social {
+    left: 3%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    opacity: 0.8;
+
+    ul {
+        list-style: none;
+        line-height: 1em;
+        margin: 0;
+        
+        li {
+            display: block;
+            float: left;
+            width: 40px;
+        }
+
+    }
+
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+    
+        span {
+
+            color: transparent;
+        }        
+
+    }
+
+    a.imgsprite {
+        background: url('../images/imgsprite.svg') no-repeat;
+        width: 6px;
+        height: 14px;
+    }
+
+    a.facebook {
+        background-position: -2px -2px;
+    }
+    a.twitter {
+        background-position: -98px -19px;
+        width: 15px;
+    }
+    a.linkedin {
+        background-position: -32px -2px;
+        width: 16px;
+    }
+}
+
+div.contact {
+    
+    position: absolute;
+    right: 3%;
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/*
+ * Borrow helper classes from Bootstrap
+ */
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+
+@media only screen and (min-width: 601px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    #contentgrid>ul>li.poster>figure>figcaption {
+   
+        hgroup {
+            padding: 60% 2em 1em 2em;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+    }
+
+
+    #contentgrid>ul>li.poster>figure>figcaption:after {
+        border-color: transparent;
+    }
+
+
+    #contentgrid li.resp-thumbnail {
+        width: 49.95%;
+        float: left;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    #contentgrid>ul>li.poster>figure>div.poster-img {
+        width: 60%;
+
+        img {
+            display: none;
+        }
+    }
+    #contentgrid>ul>li.poster>figure>figcaption {
+        width: 40%; 
+        box-shadow: @shadow-right;
+    
+        hgroup {
+            // padding: 1.5em 1.5em;
+            padding: 4em 1.5em 1em 1.5em;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            margin-bottom: 1.2em;
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-size: 1em;
+            margin-bottom: 1.2em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    header {
+        height: @header-height;
+    }
+
+
+    #header-nav-strip {
+        line-height: @header-height;
+        
+        .sycamo-logo {
+            margin-top: 8px;
+        }
+
+        li {
+            line-height: @header-height;
+        }
+
+    }
+
+    #contentgrid {
+        margin-top: @header-height;
+    }
+
+
+    #contentgrid>ul>li.poster>figure>div.poster-img {
+        width: 66.6%;
+
+        img {
+            display: none;
+        }
+    }
+    #contentgrid>ul>li.poster>figure>figcaption {
+        width: 33.4%; 
+        box-shadow: @shadow-right;
+
+        hgroup {
+            padding: 6em 2em 1em 2em;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 1.5em;
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+    }
+
+    // #contentgrid>ul>li.poster>figure>figcaption:after {
+    //     display: block;
+    //     z-index: 999;
+    //     height: 0px;
+    //     content: '';
+    //     box-shadow: 30px 0 60px 12px rgba(255,255,255,0.9);
+    // }
+
+    #contentgrid li.resp-thumbnail {
+        width: 33.33%;
+        float: left;
+    }
+
+}
+
+
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+
+/*
+ * Borrow helper classes from Bootstrap
+ */
+@media (min-width: 768px) and (max-width: 979px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+}
+
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  .visible-print {
+    display: inherit !important;
+  }
+  .hidden-print {
+    display: none !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
