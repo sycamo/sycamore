@@ -12,6 +12,7 @@ Leo Lau
 ## ARE MARKETING EMAILS EVIL?
 
 * Email Marketing is still proven the most cost-effective promotion method for small to large companies
+* As long as it is not illegitimate, the spamming engine won't stop because the marginal cost is virtually zero
 * They want to convey appealing messages to customers, but emails are just like technology in the Stone Age -- Killing Creativity
 
 ## What's this project is about?
