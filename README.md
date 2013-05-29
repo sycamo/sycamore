@@ -19,7 +19,7 @@ Leo Lau
 
 * I believe some messages are worth reading
 * I believe good messages will make people thrilled like receiving love letters in the old mailbox
-* So many people say EMAIL MARKETING is dead, but no one come up to bury it and erect a new way of effect digital direct marketing
+* So many people say EMAIL MARKETING is dead, but no one comes up to bury it and erect a new way of effect digital direct marketing
 * This project is a baby step to make a new canvas, yet manifest with the old and ugly messages fist
 * Much more to do to overthrow the status quo
 
