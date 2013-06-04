@@ -308,7 +308,8 @@ article {
 
     li.poster figure {
 
-        background: url('@{lorempix}/1280/720') no-repeat;
+        // background: url('@{placeholder-url}/1280x720') no-repeat;
+        background: green;
         background-size: cover;
 
         position: relative;
@@ -318,25 +319,26 @@ article {
             display: block;
             float: right;
             width: 100%;
+
     
             img {
                 max-width: 100%;
                 height: auto;
             }
 
-            img:after {
-                position: absolute;
-                display: block;
-                bottom: 20px;  
-                left: 50%;
-                z-index: 999;
-                content:'';
-                border-style: solid;
-                border-width: 0 20px 20px 20px;
-                border-color: transparent transparent #000 transparent;
-                margin-left: -10px;
+            // img:after {
+            //     position: absolute;
+            //     display: block;
+            //     bottom: 20px;  
+            //     left: 50%;
+            //     z-index: 999;
+            //     content:'';
+            //     border-style: solid;
+            //     border-width: 0 20px 20px 20px;
+            //     border-color: transparent transparent #000 transparent;
+            //     margin-left: -10px;
 
-            }
+            // }
 
 
 
@@ -744,6 +746,13 @@ div.contact {
 
     #contentgrid>ul>li.poster>figure>div.poster-img {
         width: 60%;
+
+        // try this
+        height: 100%;
+        background: url('@{placeholder-url}/1280x720') no-repeat;
+        background-size: cover;
+        // ##########
+
 
         img {
             display: none;
