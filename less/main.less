@@ -309,15 +309,16 @@ article {
     li.poster figure {
 
         // background: url('@{placeholder-url}/1280x720') no-repeat;
-        background: green;
+        background: black;
         background-size: cover;
 
         position: relative;
 
+
         div.poster-img {
             position: relative;
             display: block;
-            float: right;
+            // float: right;
             width: 100%;
 
     
@@ -325,27 +326,23 @@ article {
                 max-width: 100%;
                 height: auto;
             }
+        }
 
-            // img:after {
-            //     position: absolute;
-            //     display: block;
-            //     bottom: 20px;  
-            //     left: 50%;
-            //     z-index: 999;
-            //     content:'';
-            //     border-style: solid;
-            //     border-width: 0 20px 20px 20px;
-            //     border-color: transparent transparent #000 transparent;
-            //     margin-left: -10px;
-
-            // }
-
-
+        div.poster-img:after {  // pseudo-class to show black "triangle"
+            position: absolute;
+            display: block;
+            bottom: -1px;  
+            left: 50%;
+            z-index: 999;
+            content:'';
+            border-style: solid;
+            border-width: 0 20px 20px 20px;
+            border-color: transparent transparent #000 transparent;
+            margin-left: -10px;
 
         }
 
         figcaption {
-            // position: relative;
             display: block;
             width: 100%;
             height: auto;
@@ -356,7 +353,7 @@ article {
                 bottom: 0;
                 left: auto;
                 right: auto;
-                padding: 60% 1.5em 1em 1.5em;
+                padding: 2em 1.5em 1em 1.5em;
             }
 
             h1 {
@@ -378,21 +375,7 @@ article {
                 margin-top: 1.5em;
             }
 
-
         }
-
-        // figcaption:after {
-        //     position: absolute;
-        //     display: block;
-        //     bottom: 270px;  
-        //     left: 50%;
-        //     content:'';
-        //     border-style: solid;
-        //     border-width: 0 20px 20px 20px;
-        //     border-color: transparent transparent #000 transparent;
-        //     margin-left: -10px;
-
-        // }
 
     } // end of li.poster class
 
@@ -711,10 +694,14 @@ div.contact {
 @media only screen and (min-width: 601px) {
     /* Style adjustments for viewports that meet the condition */
 
+    #contentgrid>ul>li.poster>figure>div.poster-img:after {
+        display: none;
+    } 
+
     #contentgrid>ul>li.poster>figure>figcaption {
    
         hgroup {
-            padding: 60% 2em 1em 2em;
+            padding: 2em 2em 1em 2em;
         }
 
         h1 {
@@ -741,23 +728,28 @@ div.contact {
 }
 
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 768px)  {
     /* Style adjustments for viewports that meet the condition */
 
-    #contentgrid>ul>li.poster>figure>div.poster-img {
-        width: 60%;
+    #contentgrid>ul>li.poster>figure {
+        
+        z-index: 0;
 
-        // try this
-        height: 100%;
-        background: url('@{placeholder-url}/1280x720') no-repeat;
-        background-size: cover;
-        // ##########
+        div.poster-img {
+            background: url('@{lorempix}/1280/720') no-repeat;
+            background-size: cover;
+            width: 60%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            z-index: -1;
 
-
-        img {
-            display: none;
+            img { // use only the background img
+                display: none;
+            }
         }
     }
+
     #contentgrid>ul>li.poster>figure>figcaption {
         width: 40%; 
         box-shadow: @shadow-right;
@@ -812,6 +804,7 @@ div.contact {
             display: none;
         }
     }
+
     #contentgrid>ul>li.poster>figure>figcaption {
         width: 33.4%; 
         box-shadow: @shadow-right;
@@ -832,14 +825,6 @@ div.contact {
 
     }
 
-    // #contentgrid>ul>li.poster>figure>figcaption:after {
-    //     display: block;
-    //     z-index: 999;
-    //     height: 0px;
-    //     content: '';
-    //     box-shadow: 30px 0 60px 12px rgba(255,255,255,0.9);
-    // }
-
     #contentgrid li.resp-thumbnail {
         width: 33.33%;
         float: left;
@@ -847,6 +832,24 @@ div.contact {
 
 }
 
+@media only screen and (min-width: 1280px) {
+    /* Style adjustments for viewports that meet the condition */
+
+
+    #contentgrid>ul>li.poster>figure>figcaption {
+
+        hgroup {
+            padding: 8em 2em 1em 2em;
+        }
+
+    }
+
+    #contentgrid li.resp-thumbnail {
+        width: 25%;
+        float: left;
+    }
+
+}
 
 
 @media print,
