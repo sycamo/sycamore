@@ -1,0 +1,370 @@
+/* app css stylesheet */
+
+
+@color-green: rgb(108,198,85);
+@color-lime: #A3ECDA; 
+@color-hover-grey: #f6f6f6;
+@special-font: 'Share Tech', sans-serif;
+
+body {
+  padding-top: 20px;
+}
+
+h1 {
+    font-family: 'Share Tech', sans-serif;
+}
+
+date {
+  font-size: 1em;
+  color: @color-lime; //date green
+
+}
+
+
+
+.datetime {
+  display: block;
+  background: black;
+  color: white;
+  clear: both;
+  margin: 0;
+  padding: 6px 2px;
+  text-transform: uppercase;
+
+}
+
+
+h1 {
+  // border-bottom: 1px solid gray;
+}
+
+footer {
+
+  span {
+    font-family: @special-font;
+  }
+}
+
+
+
+
+.main-view {
+  margin-top: 28px;
+}
+
+
+#mailList-page {
+  padding: 0;
+  background: white;
+  color: black;
+
+  .cover-container figure {
+    position: relative;
+    margin: 0;
+
+    div.prime {
+      max-height: 420px;
+      overflow: hidden;
+    }
+
+    figcaption {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 1em 0.5em;
+      background: -webkit-linear-gradient(top, rgba(181,189,200,0) 5%, rgba(130,140,149,0.5) 30%, rgba(40,52,59,0.9) 100%);
+      color: white;
+    
+      h1 {
+        font-size: 1.2em;
+        line-height: 1.2em;
+      }
+      h3 {
+        font-weight: normal;
+        font-size: 0.8em;
+        line-height: 1.2em;
+      }
+
+
+    }
+  }
+
+  .small-container {
+    position: relative;
+    margin: 0;
+    padding: 1em 1em;
+
+    figure{
+      width: 100%;
+      margin: 0;
+
+      div.smallthumb {
+        max-height: 130px;
+        overflow: hidden;
+        vertical-align: middle; 
+
+      }
+
+      img {
+        // min-width: 150px;
+        // min-height: 100px;
+        width: 100%;
+        display: inline-block;
+        float: left;
+      }
+
+      span.label {
+        display: none;
+      }
+
+      figcaption {
+        padding: 0 1em;
+
+        h1 {
+          font-size: 1.1em;
+          line-height: 1.1em;
+          margin: 0;
+          color: black;
+        }
+        h3 {
+          font-weight: normal;
+          font-size: 0.8em;
+          line-height: 1.2em;
+        }
+
+      }
+      
+    }
+
+  }
+
+  .small-container:hover {
+    background: @color-hover-grey;
+
+  }
+
+}
+
+.popunder {
+  background: url('../images/brushed_gray.jpg');
+  padding-right: 3px;
+}
+
+#searchbar {
+  height: 48px;
+  width: 300px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: auto;
+  font-family: @special-font; 
+  display: none;
+
+
+  .searchwrap {
+    height: 38px;
+    margin: 5px 5px;
+    background: url('../images/brushed_black.jpg');
+    position: relative;
+  }
+
+  .searchwrap:after {  // pseudo-class to show black "triangle"
+    position: absolute;
+    display: block;
+    top: -8px;  
+    left: 92%;
+    z-index: 999;
+    content:'';
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #000 transparent;
+    margin-left: -10px;
+
+  }
+
+  .stext {
+    display: inline-block;
+    float: left;
+    color: white;
+    font-size: 0.8em;
+    padding-top: 0.8em;
+    margin: 0 10px;
+
+  }
+
+  .inputbox {
+    display: inline-block;
+    float: left;
+    margin-top: 8px;
+    position: relative;
+
+    input {
+      font-family: @special-font; 
+      width: 200px;
+    }
+
+    .icon-wrap {
+      z-index: 10;
+      position: absolute;
+      right: 5px;
+      top: -4px;
+      opacity: 0.3;
+    }
+  }
+
+  .input-append button.add-on {
+    height: 22px;
+    margin-top: 0.4px;
+  }
+}
+
+
+
+
+#detail-page {
+  background: url('../images/brushed_gray.jpg') ;
+
+  a {
+    color: @color-lime;
+  }
+
+  .container {
+    background: #eee;
+
+    .mailwrapper {
+
+    } 
+
+    .social {
+
+      padding-top: 3em;
+
+      ul{
+        list-style: none;
+        display: block;
+
+        li {
+          padding-top: 2em;
+        }
+      }
+    }
+  
+    .mailbody {
+      background: white;
+      color: black;
+      padding-top: 3em;
+      padding-left: 1em;
+
+      span {
+        font-size: 0.8em;
+        color: grey;
+      }
+
+
+
+    }
+
+    #myCarousel {
+
+      width: 600px;
+      height: 400px;
+      margin: 0 auto;
+      background: black;
+
+
+      .imgmaxheight {
+        max-height: 400px;
+        margin: auto auto;
+      }
+
+    }
+  }
+  
+}
+
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+
+@media only screen and (min-width: 601px) {
+    /* Style adjustments for viewports that meet the condition */
+
+
+
+
+  #mailList-page>div>div.cover-container {
+    position: relative;
+    margin: 0;
+    padding: 1em 1em;
+
+    figure {
+      width: 100%;
+      margin: 0;
+
+      .prime {
+          width: 31.914893614%; // span4
+          display: block;
+          float: left;
+
+          max-height: 130px;
+          overflow: hidden;
+          vertical-align: middle; 
+      
+        img {
+          width: 100%;
+          display: inline-block;
+          float: left;
+        }
+      }
+
+      span.label {
+        display: none;
+      }
+      
+
+      .covercap {
+        width: 65.95744680199999%; // span8
+        margin-left: 2.127659574%;
+        display: block;
+        float: left;
+      }
+
+
+      figcaption {
+        position: static;
+        padding: 0 1em;
+        background: transparent;
+        color: black;
+
+        h1 {
+          font-size: 1.1em;
+          line-height: 1.1em;
+          margin: 0;
+          color: black;
+        }
+        h3 {
+          font-weight: normal;
+          font-size: 0.8em;
+          line-height: 1.2em;
+        }
+
+      }
+    }
+  }
+
+  .cover-container:hover {
+    background: @color-hover-grey;
+
+  }
+
+
+
+
+
+
+}

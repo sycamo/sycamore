@@ -1,0 +1,54 @@
+
+<!-- 
+**********************************
+ Text input box for mail filter
+**********************************
+ -->
+
+<section>
+  <div class="container-fluid popunder">
+
+    <div id="searchbar">
+
+      <div class="searchwrap">
+        <div class="stext">Filter by:</div> 
+        <div class='input-append inputbox'>
+            <input ng-model="query" placeholder="Type anything..." />
+            <div class="icon-wrap"><i class="icon-search"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+**********************************
+ Main Mail List View
+**********************************
+ -->
+
+<main>
+<div id="mailList-page" class="container-fluid">
+  <div class="row-fluid show-grid">
+    <div ng-class="{true:'cover-container', false:'small-container'}[$first]" class="span12" ng-repeat="mail in mails | filter:query" >
+      <figure>
+        <div ng-class="{true:'prime', false:'span4 smallthumb'}[$first]">
+          <img src="{{mail.thumbnail}}" >
+        </div>
+        <div ng-class="{true:'covercap', false:'span8'}[$first]">
+          <figcaption>
+            <span class="label">COVER</span>
+            <a href="#/mails/{{mail.filename}}"><h1>{{mail.title | truncate:70}}</h1></a>
+            <h3>{{mail.snippet  | truncate}} / <date>{{mail.dateReceived*1000 | date:'medium'}}</date></h3>
+            <!-- <h3>{{mail.read | checkmark}}</h3> -->
+          </figcaption>
+        </div>
+      </figure>
+    </div> 
+    <!-- end of ng-repeat -->
+
+
+  </div>
+
+</div>
+</main>

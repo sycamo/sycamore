@@ -1,0 +1,70 @@
+
+<div id="cover-page" class="container-fluid">
+  <div class="row-fluid">
+    <!-- <div class="cover-container span12"> -->
+    <div ng-class="{true:'cover-container', false:'small-container'}[$first]" class="span12" ng-repeat="mail in mails">
+      <figure>
+        <div ng-class="{true:'prime', false:'span4 smallthumb'}[$first]">
+          <img src="{{mail.thumbnail}}" resize-img>
+        </div>
+        <div ng-class="{true:'', false:'span8'}[$first]">
+          <figcaption>
+            <span class="label">COVER</span>
+            <h1>{{mail.title | truncate:70}}</h1>
+            <h3>{{mail.snippet  | truncate}} <span style="color: #d0d0d0;">/ {{mail.dateReceived*1000 | date:'medium'}}</span></h3>
+            <!-- <h3>{{mail.read | checkmark}}</h3> -->
+          </figcaption>
+        </div>
+      </figure>
+    </div> 
+    <!-- end of ng-repeat -->
+
+
+  </div>
+
+  <!-- <div>
+    <img id="testImg" src ="mails/thumbnail/mail-001.jpg" my-border>
+  </div> -->
+
+
+
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3"> -->
+
+
+      <!--Sidebar content-->
+
+<!--       Search: <input ng-model="query"> <br>
+      Sort by:
+      <select ng-model="orderProp">
+      	<option value="dateReceived">Oldest</option>
+      	<option value="senderName">Sender Name</option>
+      	<option value="title">Subject Line</option>
+      </select>
+
+    </div>
+    <div class="span9">
+    	<div class="row-fluid">
+    		<h2> List of Mails </h2> -->
+
+	      <!--Body content-->
+<!-- 	      <ul class="thumbnails">
+	        <li ng-repeat="mail in mails | filter:query | orderBy: orderProp" class="span4">
+	          <div class="thumbnail">
+	          	<a href="#/phones/{{mail.filename}}" class=""><img ng-src="{{mail.thumbnail}}"></a>
+	          	<div class="caption">
+                <span class="badge badge-info">{{mail.senderName}}</span>
+	          		<h3><a href="#/mails/{{mail.filename}}">{{mail.title}}</a></h3>
+	          		<p>{{mail.snippet}}</p>
+                <p>Date: {{mail.dateReceived*1000 | date:'medium'}} </p>
+	          	</div> 
+	          </div>
+	        </li>
+	      </ul> -->
+      <!-- </div>  --><!-- end of row-fluid-->
+    <!-- </div> --> <!-- end of span9 -->
+  <!-- </div>  --><!-- end of row-fluid -->
+<!-- </div> --> <!-- end of container-fluid -->

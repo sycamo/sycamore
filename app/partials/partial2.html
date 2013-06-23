@@ -1,0 +1,156 @@
+
+<article id="detail-page">
+  <div class="container">
+    <div class="mailwrapper row">
+      <div class="social span1">
+        <ul>
+          <li><a href="#" target="_blank" class="imgsprite facebook"><span>facebook</span></a></li>
+          <li><a href="#" target="_blank" class="imgsprite twitter"><span>twitter</span></a></li>
+          <li><a href="#" target="_blank" class="imgsprite linkedin"><span>linkedin</span></a></li>
+        </ul>
+      </div>
+      <div class="mailbody span10">
+
+        <span>{{mail.senderName}} / <date>{{mail.dateReceived*1000 | date:'medium'}}</date></span>
+
+        <h1>{{mail.title}}</h1>
+
+        <div class="mailDetail">
+
+
+          <div class="mailImgPane">
+
+            <div ng-carousel id="myCarousel" class="carousel slide">
+              <div class="carousel-inner">
+
+                <div ng-class="{item:true, active:$first}" ng-repeat="img in mail.gallery" class="imgdiv">
+                  <img ng-src="mails/{{mail.id}}/images/{{img}}" resize-img>
+                </div>
+
+              </div>
+
+              <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+              <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+            </div> <!-- end of carousel -->
+
+
+          </div>
+
+        <P>{{mail.snippet}}}</p>
+        <p> <a href="{{mail.permalink}}">permalink</a></p>
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+  <div class="row-fluid">
+
+  	<div class="span1">
+  		<ul>
+  			<li>like</li>
+  			<li>save for later</li>
+      </ul>
+
+  	</div>
+  	<div class="span11">
+  		<iframe src="{{mail.permalink}}" width="90%" height="420px"></iframe>
+  	</div>
+
+  </div>
+</div>
+
+ -->
+
+
+<!--     <div ng-class="{true:'cover-container', false:'small-container'}[$first]" class="span12" ng-repeat="mail in mails">
+      <figure>
+        <div ng-class="{true:'prime', false:'span4 smallthumb'}[$first]">
+          <img src="{{mail.thumbnail}}" resize-img>
+        </div>
+        <div ng-class="{true:'', false:'span8'}[$first]">
+          <figcaption>
+            <span class="label">COVER</span>
+            <h1>{{mail.title | truncate:70}}</h1>
+            <h3>{{mail.snippet  | truncate}} <span style="color: #d0d0d0;">/ {{mail.dateReceived*1000 | date:'medium'}}</span></h3>
+          </figcaption>
+        </div>
+      </figure>
+    </div> 
+
+
+  </div>
+
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      Search: <input ng-model="query"> <br>
+      Sort by:
+      <select ng-model="orderProp">
+      	<option value="dateReceived">Oldest</option>
+      	<option value="senderName">Sender Name</option>
+      	<option value="title">Subject Line</option>
+      </select>
+
+		</div>
+
+		<div class="span9">
+
+
+			<div class="datetime">
+				<time datetime="2013-06-07">Friday, Jun 07</time>
+			</div>
+			<article class="mailDetail">
+				<figure>
+					<img ng-src="{{mainImageUrl}}">
+				</figure>
+				<div class="mail-thumbs">
+					<ul class="mail-slides">
+						<li ng-repeat="img in mail.gallery">
+							<img ng-src="{{img}}">
+						</li>
+					</ul>
+				</div>
+
+				<p>This is the partial for view 2.</p>
+				<p>
+				  Showing of 'interpolate' filter.
+				</p>
+			</article>
+
+
+
+
+  	</div>
+  </div>
+</div> -->
+
+

@@ -1,0 +1,20 @@
+{
+    "id": "mail-001",
+	"dateReceived": 1370649593,
+	"senderName": "SONY HK",
+	"senderEmail": "mysony@sony.com.hk",
+    "title": "Sony Father's Day Offer - Free Movie & Oyster Voucher",
+	"snippet": "Buy Sony Products Win $300 Movie Vouchers",
+	"thumbnail": "mail-001.jpg",
+	"src": "mail-001.html",
+	"permalink": "http://www.sony.com.hk/sony.leeds.web/campaign/viewTemplate?campaignId=21262&campaignData=732B76B853A5CFCF2619A9E1778956EA281D4BA25A4BF32B3E14F2200D989EC5C6929721904103B779CDC9CF5CDD1B2AAFE9A042FFE39B254D40555350DE55039E1E5A6DCDA0EC5D66339CECD29BE8D1AB01D4D15770C4ED556924191F37B3AD6FAEB27F7C16C21EAE5041CD84034003FE39DDB4758AEB41",
+	"gallery": [
+		"mail-001.jpg",
+		"main2.jpg",
+		"footer1.jpg",
+		"footer2.jpg"
+	],
+	"CTA": "",
+	"read": false
+
+}
